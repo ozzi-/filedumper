@@ -20,6 +20,9 @@
 			writePOSTTxt($filename);
 			echoSuccessLink($filename);
 		}elseif($_GET['type']==="file" && isset($_FILES['filed'])){
+			if($_FILES['filed']['name']===""){
+				die("No file selected");
+			}
 			$ext = pathinfo($_FILES['filed']['name'], PATHINFO_EXTENSION);
 			if(cleanExtension($ext)){
 				$filename.="($ext).file";
