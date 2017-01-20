@@ -72,6 +72,7 @@
 		header('X-Frame-Options: DENY');
 		if(FORCE_HTTPS){
 			ini_set('session.cookie_secure', 1 );	
+			header('Strict-Transport-Security: max-age=31536000;includeSubDomains;preload');
 		}
 		
 		ini_set('session.use_only_cookies', 1);
