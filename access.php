@@ -14,6 +14,7 @@
 			header('Expires: 0');
 			header('Cache-Control: no-cache, no-store, max-age=0, must-revalidate');
 			header('Pragma: no-cache');
+			header('X-Content-Type-Options: nosniff');
 			header('Content-Length: ' . filesize($file));
 			readfile($file);
 			exit;
